@@ -1,0 +1,6 @@
+name = "unimaven"
+main = "src/index.ts"
+compatibility_date = "2024-01-29"
+
+[vars]
+CURSEFORGE_API_KEY="DUMMY"
