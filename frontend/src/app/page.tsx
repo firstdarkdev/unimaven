@@ -114,6 +114,7 @@ export default function Home() {
                         required
                         className={'w-full'}
                         onChange={onInputChange}
+                        onKeyDown={(key) => key.key == 'Enter' && getMavenString()}
                     />
                     <Button onClick={() => getMavenString()}>Get</Button>
                 </div>
