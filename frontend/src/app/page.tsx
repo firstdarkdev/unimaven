@@ -108,8 +108,8 @@ export default function Home() {
                 <p className={'text-left mb-1 text-sm ml-0.5'}>Enter a File Link below, to get the maven information</p>
                 <div className={'flex gap-1 justify-between'}>
                     <TextInput
-                        id='email1'
-                        type='email'
+                        id='text'
+                        type='text'
                         placeholder='https://www.curseforge.com/minecraft/mc-mods/craterlib/files/5834539'
                         required
                         className={'w-full'}

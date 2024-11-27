@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"log"
 	"net/http"
 	"regexp"
 	"strconv"
@@ -102,7 +101,6 @@ func (u *Utils) GetCurseforgeUrl(slug, fileID, token string) (string, error) {
 
 	// Check if the project ID was found in the slug. If not, we fail and burn
 	if match != "" {
-		log.Println(slug, match)
 		return u.GetCurseDownloadUrl(match, fileID, token)
 	}
 
