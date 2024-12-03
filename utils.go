@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 type Utils struct{}
@@ -182,7 +183,7 @@ func (u *Utils) GetNightBloomUrl(projectSlug, versionID string) (string, error) 
 		}
 
 		if !result.error {
-			return result.Data.Downloadurl, nil
+			return strings.Replace(result.Data.Downloadurl, "download", "raw_download", 1), nil
 		}
 		return "", errors.New("file Not Found")
 	}
