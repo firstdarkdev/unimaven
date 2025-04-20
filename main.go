@@ -11,6 +11,7 @@ import (
 // Main Entry Point
 func main() {
 	e := echo.New()
+
 	e.Use(middleware.CORS())
 	e.Static("/", "webcontent")
 	util := Utils{}
@@ -24,6 +25,11 @@ func main() {
 		}
 
 		return c.String(http.StatusOK, cfurl)
+	})
+
+	// Dummy request handler as gradle now want to use HEAD requests
+	e.HEAD("/unimaven/:platform/:slug/:fileid/:type", func(c echo.Context) error {
+		return c.NoContent(http.StatusOK)
 	})
 
 	// Generic route to handle both .jar and .pom requests from gradle
